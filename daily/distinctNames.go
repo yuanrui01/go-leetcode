@@ -18,13 +18,11 @@ func distinctNames(ideas []string) (ans int64) {
 			}
 		}
 	}
-
-	for a := 1; a < 26; a++ {
-		for b := 0; b < a; b++ {
-			m := intersection[a][b]
-			ans += int64(size[a]-m) * int64(size[b]-m)
+	for i := 1; i < 26; i++ {
+		for j := 0; j < i; j++ {
+			m := intersection[i][j]
+			ans += int64(size[i]-m) * int64(size[j]-m)
 		}
 	}
-
 	return ans * 2
 }
