@@ -4,7 +4,7 @@ package daily
 func dailyTemperatures(temperatures []int) []int {
 	n := len(temperatures)
 	ans := make([]int, n)
-	st := []int{}
+	var st []int
 	for i, t := range temperatures {
 		for len(st) > 0 && temperatures[st[len(st)-1]] < t {
 			j := st[len(st)-1]
