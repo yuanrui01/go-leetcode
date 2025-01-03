@@ -1,0 +1,40 @@
+package main
+
+// 731. 我的日程安排表 II
+type MyCalendarTwo struct {
+	booked [][]int
+}
+
+func Constructor() MyCalendarTwo {
+	return MyCalendarTwo{
+		booked: [][]int{},
+	}
+}
+
+func (this *MyCalendarTwo) Book(startTime int, endTime int) bool {
+	var overlap [][]int
+	for _, x := range this.booked {
+		l := x[0]
+		r := x[1]
+		if r > startTime && l < endTime {
+			for _, y := range overlap {
+				if y[1] > l && y[0] < r {
+					return false
+				}
+				overlap = append(overlap, []int{max(startTime, l), min(endTime, r)})
+			}
+		}
+	}
+	this.booked = append(this.booked, []int{startTime, endTime})
+	return true
+}
+
+func main() {
+	myCalendar2 := Constructor()
+	println(myCalendar2.Book(10, 20))
+	println(myCalendar2.Book(50, 60))
+	println(myCalendar2.Book(10, 40))
+	println(myCalendar2.Book(5, 15))
+	println(myCalendar2.Book(5, 10))
+	println(myCalendar2.Book(25, 55))
+}
