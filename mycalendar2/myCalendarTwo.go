@@ -1,6 +1,6 @@
 package main
 
-// 731. 我的日程安排表 II
+// MyCalendarTwo 731. 我的日程安排表 II
 type MyCalendarTwo struct {
 	booked [][]int
 }
