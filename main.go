@@ -10,7 +10,8 @@ func main() {
 	//k := 3
 	//nums := []int{1, 2, 4, 5}
 	//fmt.Println(daily.MinimumDifference(nums, k))
-	println(daily.CountKeyChanges("aAbBcC"))
+	//println(daily.CountKeyChanges("aAbBcC"))
+	println(daily.LargestGoodInteger("6777133339"))
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
