@@ -12,9 +12,12 @@ func main() {
 	//fmt.Println(daily.MinimumDifference(nums, k))
 	//println(daily.CountKeyChanges("aAbBcC"))
 	//println(daily.LargestGoodInteger("6777133339"))
-	word1 := "bcca"
-	word2 := "abc"
-	println(daily.ValidSubstringCount(word1, word2))
+	//word1 := "bcca"
+	//word2 := "abc"
+	//println(daily.ValidSubstringCount(word1, word2))
+	nums := []int{1, 2, 3}
+	k := 2
+	println(daily.MinimumSubarrayLength(nums, k))
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
