@@ -1,6 +1,9 @@
 package main
 
-import "leetcode/daily"
+import (
+	"leetcode/daily"
+	"unsafe"
+)
 
 //TIP To run your code, right-click the code and select <b>Run</b>. Alternatively, click
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.
@@ -18,6 +21,8 @@ func main() {
 	nums := []int{1, 2, 3}
 	k := 2
 	println(daily.MinimumSubarrayLength(nums, k))
+
+	println("int size is %d byte\n", unsafe.Sizeof(nums))
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
