@@ -1,3 +1,5 @@
+package daily
+
 // 680. Valid Palindrome II
 func validPalindrome(s string) bool {
 	var valid func(s string, left int, right int) bool

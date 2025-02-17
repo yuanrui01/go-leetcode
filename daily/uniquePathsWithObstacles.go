@@ -1,7 +1,7 @@
 package daily
 
 // 63. 不同路径 II
-func uniquePathsWithObstacles(obstacleGrid [][]int) int {
+func UniquePathsWithObstacles(obstacleGrid [][]int) int {
 	n := len(obstacleGrid)
 	m := len(obstacleGrid[0])
 	if obstacleGrid[0][0] == 1 || obstacleGrid[n-1][m-1] == 1 {
