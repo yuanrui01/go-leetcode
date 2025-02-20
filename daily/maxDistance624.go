@@ -8,8 +8,7 @@ func maxDistance624(arrays [][]int) int {
 	for i := 1; i < len(arrays); i++ {
 		first := arrays[i][0]
 		last := arrays[i][len(arrays[i])-1]
-		ans = max(ans, abs(mx-first))
-		ans = max(ans, abs(mn-last))
+		ans = max(ans, abs(mn-last), abs(mx-first))
 		mx = max(mx, last)
 		mn = min(mn, first)
 	}
