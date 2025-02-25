@@ -7,9 +7,9 @@ type OrderedStream struct {
 	ss  []string
 }
 
-func Constructor(n int) OrderedStream {
-	return OrderedStream{n: n + 1, ptr: 1, ss: make([]string, n+1)}
-}
+//func Constructor(n int) OrderedStream {
+//	return OrderedStream{n: n + 1, ptr: 1, ss: make([]string, n+1)}
+//}
 
 func (this *OrderedStream) Insert(idKey int, value string) []string {
 	this.ss[idKey] = value
