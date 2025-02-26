@@ -8,15 +8,14 @@ type BrowserHistory struct {
 }
 
 //func Constructor(homepage string) BrowserHistory {
-//	b := BrowserHistory{make([]string, 0), 0, 0}
-//	b.his = append(b.his, homepage)
+//	b := BrowserHistory{make([]string, 5001), 0, 0}
+//	b.his[0] = homepage
 //	return b
 //}
 
 func (this *BrowserHistory) Visit(url string) {
 	this.cur++
-	this.his = this.his[:this.cur]
-	this.his = append(this.his, url)
+	this.his[this.cur] = url
 	this.last = this.cur
 }
 
