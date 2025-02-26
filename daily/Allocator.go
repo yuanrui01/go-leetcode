@@ -3,9 +3,9 @@ package daily
 type Allocator []int
 
 // 2502. 设计内存分配器
-func Constructor(n int) Allocator {
-	return make([]int, n)
-}
+//func Constructor(n int) Allocator {
+//	return make([]int, n)
+//}
 
 func (a Allocator) Allocate(size int, mID int) int {
 	free := 0
