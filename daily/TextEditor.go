@@ -2,37 +2,43 @@ package daily
 
 // TextEditor 2296. 设计一个文本编辑器
 type TextEditor struct {
-	s      []byte
-	cursor int
+	left, right []byte
 }
 
 //func Constructor() TextEditor {
-//	return TextEditor{make([]byte, 0, 1024), 0}
+//	return TextEditor{}
 //}
 
-func (this *TextEditor) AddText(text string) {
-	bytes := []byte(text)
-	this.s = append(this.s[:this.cursor], append(bytes, this.s[this.cursor:]...)...)
-	this.cursor += len(text)
+func (t *TextEditor) AddText(text string) {
+	t.left = append(t.left, text...)
 }
 
-func (this *TextEditor) DeleteText(k int) int {
-	cnt := min(k, this.cursor)
-	if cnt > 0 {
-		this.s = append(this.s[:this.cursor-cnt], this.s[this.cursor:]...)
+func (t *TextEditor) DeleteText(k int) int {
+	k = min(k, len(t.left))
+	t.left = t.left[:len(t.left)-k]
+	return k
+}
+
+func (t *TextEditor) text() string {
+	return string(t.left[max(0, len(t.left)-10):])
+}
+
+func (t *TextEditor) CursorLeft(k int) string {
+	for k > 0 && len(t.left) > 0 {
+		t.right = append(t.right, t.left[len(t.left)-1])
+		t.left = t.left[:len(t.left)-1]
+		k--
 	}
-	this.cursor -= cnt
-	return cnt
+	return t.text()
 }
 
-func (this *TextEditor) CursorLeft(k int) string {
-	this.cursor -= min(k, this.cursor)
-	return string(this.s[max(0, this.cursor-10):this.cursor])
-}
-
-func (this *TextEditor) CursorRight(k int) string {
-	this.cursor = min(this.cursor+k, len(this.s))
-	return string(this.s[max(0, this.cursor-10):this.cursor])
+func (t *TextEditor) CursorRight(k int) string {
+	for k > 0 && len(t.right) > 0 {
+		t.left = append(t.left, t.right[len(t.right)-1])
+		t.right = t.right[:len(t.right)-1]
+		k--
+	}
+	return t.text()
 }
 
 /**
