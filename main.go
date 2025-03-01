@@ -23,6 +23,7 @@ func main() {
 	println(daily.MinimumSubarrayLength(nums, k))
 
 	println("int size is %d byte\n", unsafe.Sizeof(nums))
+	daily.Partition("aab")
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
