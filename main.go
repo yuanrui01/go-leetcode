@@ -2,7 +2,6 @@ package main
 
 import (
 	"leetcode/daily"
-	"unsafe"
 )
 
 //TIP To run your code, right-click the code and select <b>Run</b>. Alternatively, click
@@ -18,12 +17,16 @@ func main() {
 	//word1 := "bcca"
 	//word2 := "abc"
 	//println(daily.ValidSubstringCount(word1, word2))
-	nums := []int{1, 2, 3}
-	k := 2
-	println(daily.MinimumSubarrayLength(nums, k))
+	//nums := []int{1, 2, 3}
+	//k := 2
+	//println(daily.MinimumSubarrayLength(nums, k))
+	//
+	//println("int size is %d byte\n", unsafe.Sizeof(nums))
+	//daily.Partition("aab")
 
-	println("int size is %d byte\n", unsafe.Sizeof(nums))
-	daily.Partition("aab")
+	nums2 := []int{1, 1, 1}
+	k := 2
+	println(daily.SubarraySum2(nums2, k))
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
