@@ -8,22 +8,17 @@ func canBeValid(s string, locked string) bool {
 	}
 	mx, mn := 0, 0
 	for i := 0; i < n; i++ {
-		if locked[i] == '1' {
-			d := -1
-			if s[i] == '(' {
-				d = 1
-			}
-			mx += d
-			if mx < 0 {
-				return false
-			}
-			mn += d
-		} else {
-			mx++
-			mn--
+		d := -1
+		if s[i] == '(' {
+			d = 1
 		}
+		mx += d
+		mn += d
 		if mn < 0 {
 			mn = 1
+		}
+		if mx < 0 {
+			return false
 		}
 	}
 	return mn == 0
