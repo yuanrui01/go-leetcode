@@ -11,11 +11,11 @@ func minimumCost(s string) int64 {
 
 	for s1 := n/2 - 1; s1 >= 0; s1-- {
 		if s[s1] == '0' && !b1 || s[s1] == '1' && b1 {
-			ans1 += (s1 + 1)
+			ans1 += s1 + 1
 			b1 = !b1
 		}
 		if s[s1] == '1' && !b0 || s[s1] == '0' && b0 {
-			ans0 += (s1 + 1)
+			ans0 += s1 + 1
 			b0 = !b0
 		}
 	}
@@ -23,11 +23,11 @@ func minimumCost(s string) int64 {
 	b0 = false
 	for s2 := n / 2; s2 < n; s2++ {
 		if s[s2] == '0' && !b1 || s[s2] == '1' && b1 {
-			ans1 += (n - s2)
+			ans1 += n - s2
 			b1 = !b1
 		}
 		if s[s2] == '1' && !b0 || s[s2] == '0' && b0 {
-			ans0 += (n - s2)
+			ans0 += n - s2
 			b0 = !b0
 		}
 	}
