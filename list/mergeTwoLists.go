@@ -1,12 +1,6 @@
 package main
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+// 21. 合并两个有序链表
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	head := &ListNode{}
 	cur := head
@@ -20,14 +14,11 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 		}
 		cur = cur.Next
 	}
-
 	if list1 != nil {
 		cur.Next = list1
 	}
-
 	if list2 != nil {
 		cur.Next = list2
 	}
-
 	return head.Next
 }
