@@ -1,3 +1,6 @@
+package daily
+
+// 2900. 最长相邻不相等子序列 I
 func getLongestSubsequence(words []string, groups []int) []string {
 	n := len(groups)
 
