@@ -24,9 +24,9 @@ func main() {
 	//println("int size is %d byte\n", unsafe.Sizeof(nums))
 	//daily.Partition("aab")
 
-	nums2 := []int{1, 1, 1}
-	k := 2
-	println(daily.SubarraySum2(nums2, k))
+	nums2 := []int{1, 2, 3, 3, 4}
+	k := 0
+	println(daily.PartitionArray(nums2, k))
 }
 
 //TIP See GoLand help at <a href="https://www.jetbrains.com/help/go/">jetbrains.com/help/go/</a>.
